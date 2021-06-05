@@ -99,6 +99,10 @@ namespace MN {
 				lowerInterT0 = acos(costLowerInter),
 				upperInterT1 = PI20 - upperInterT0,
 				lowerInterT1 = PI20 - lowerInterT0;
+			if(upperInterT0 > lowerInterT0)
+				std::swap(upperInterT0, lowerInterT0);
+			if(lowerInterT1 > upperInterT1)
+				std::swap(lowerInterT1, upperInterT1);
 			circleDomain[0].set(upperInterT0, lowerInterT0);
 			circleDomain[1].set(lowerInterT1, upperInterT1);
 			domainNum = 2;
